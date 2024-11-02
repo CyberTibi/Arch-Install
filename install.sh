@@ -1,5 +1,4 @@
 #!/bin/bash
-# https://github.com/JaKooLit
 
 # Set some colors for output messages
 OK="$(tput setaf 2)[OK]$(tput sgr0)"
@@ -35,7 +34,7 @@ else
     if sudo pacman -S --noconfirm --needed base-devel; then
         echo "$OK base-devel has been installed successfully."
     else
-        echo "$ERROR base-devel not found nor cannot be installed."
+        echo "$ERROR base-devel not found or cannot be installed."
         echo "$ACTION Please install base-devel manually before running this script... Exiting"
         exit 1
     fi
@@ -44,7 +43,7 @@ fi
 clear
 
 # Welcome message
-echo "$(tput setaf 6)Welcome to JaKooLit's Arch-Hyprland Install Script!$(tput sgr0)"
+echo "$(tput setaf 6)Welcome to CyberTibi's Arch-Install Script!$(tput sgr0)"
 echo
 
 read -p "$(tput setaf 6)Would you like to proceed? (y/n): $(tput sgr0)" proceed
@@ -58,13 +57,6 @@ if [ "$proceed" != "y" ]; then
 fi
 
 printf "\n%.0s" {1..2}
-
-# #read -p "$(tput setaf 6)Would you like to Use Preset Settings (See note above)? (y/n): $(tput sgr0)" use_preset
-
-# # Use of Preset Settings
-# if [[ $use_preset = [Yy] ]]; then
-#   source ./preset.sh
-# fi
 
 # Function to colorize prompts
 colorize_prompt() {

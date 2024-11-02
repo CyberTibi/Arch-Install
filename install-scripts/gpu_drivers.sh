@@ -5,7 +5,7 @@
 # WARNING! If you remove packages here, dotfiles may not work properly.
 # and also, ensure that packages are present in AUR and official Arch Repo
 
-fonts=(
+gpud=(
     mesa 
     mesa-utils 
     xf86-video-amdgpu 
@@ -24,13 +24,13 @@ cd "$PARENT_DIR" || exit 1
 source "$(dirname "$(readlink -f "$0")")/Global_functions.sh"
 
 # Set the name of the log file to include the current date and time
-LOG="Install-Logs/install-$(date +%d-%H%M%S)_fonts.log"
+LOG="Install-Logs/install-$(date +%d-%H%M%S)_gpu_drivers.log"
 
 
 # Installation of main components
-printf "\n%s - Installing necessary fonts.... \n" "${NOTE}"
+printf "\n%s - Installing gpu drivers.... \n" "${NOTE}"
 
-for PKG1 in "${fonts[@]}"; do
+for PKG1 in "${gpud[@]}"; do
   install_package "$PKG1" 2>&1 | tee -a "$LOG"
   if [ $? -ne 0 ]; then
     echo -e "\e[1A\e[K${ERROR} - $PKG1 Package installation failed, Please check the installation logs"

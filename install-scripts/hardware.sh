@@ -8,10 +8,10 @@
 hardware=(
     dmidecode 
     dmraid 
-    hdparam 
+    hdparm 
     hwdetect 
     lsscsi 
-    sg3-utils 
+    sg3_utils 
 )
 
 
